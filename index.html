@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guessing game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="pageTitle">
+        <h1>Guess the number</h1>
+    </header>
+    <main id="mainSection">
+        <div class="logicBlock">
+            <div class="logicBlockTextAlign">
+                <p><input type="number" class="numberInput" id="numberInput" min="1" max="50" maxlength="2"></p>
+                <p><input type="submit" onclick="answerChecking()" value="Place your guess"></p>
+            </div>
+        </div>
+        <div class="answerBlock">
+            <h2>Answer was...</h2>
+            <span id="answer"></span>
+        </div>
+    </main>
+    <footer id="footer">
+        <a href="https://github.com/xKitsune47"><img src="github-logo.png" alt="github"></a>
+    </footer>
+</body>
+</html>
