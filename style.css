@@ -20,7 +20,7 @@ body{
     height: 28rem;
     text-align: right;
     border-top: 1px black solid;
-    padding: 4rem;
+    padding: 6em 4em 4em 4em;
 }
 
 .answerBlock{
@@ -29,7 +29,12 @@ body{
     text-align: left;
     border-left: 0.5px black solid;
     border-top: 1px black solid;
-    padding: 4rem;
+    padding: 6em 4em 4em 4em;
+
+}
+
+.answer{
+    font-size: 3rem;
 }
 
 input{
@@ -39,11 +44,11 @@ input{
 }
 
 input[type=number]{
-    height: 4rem;
+    height: 12rem;
     background-color: #708090;
     border: 0.125rem #4A5859 solid;
     filter: brightness(90%);
-    font-size: 2rem;
+    font-size: 5rem;
 }
 
 input[type=submit]{
