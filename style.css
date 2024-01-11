@@ -1,0 +1,98 @@
+body{
+    background-color: #708090;
+    font-family: 'Sometype Mono', monospace;
+}
+
+#mainSection{
+    width: 100%;
+    display: block;
+    display: flex;
+    flex-direction: row;
+}
+
+.pageTitle{
+    text-align: center;
+    padding: 2rem;
+}
+
+.logicBlock{
+    width: 50%;
+    height: 28rem;
+    text-align: right;
+    border-top: 1px black solid;
+    padding: 4rem;
+}
+
+.answerBlock{
+    width: 50%;
+    height: 28rem;
+    text-align: left;
+    border-left: 0.5px black solid;
+    border-top: 1px black solid;
+    padding: 4rem;
+}
+
+input{
+    font-family: 'Sometype Mono', monospace;
+    width: 12rem;
+    text-align: center;
+}
+
+input[type=number]{
+    height: 4rem;
+    background-color: #708090;
+    border: 0.125rem #4A5859 solid;
+    filter: brightness(90%);
+    font-size: 2rem;
+}
+
+input[type=submit]{
+    background-color: #708090;
+    border: 0.125rem #4A5859 solid;
+    filter: brightness(90%);
+    margin-right: 0.25rem;
+    height: 3rem;
+    font-size: 1rem;
+    text-wrap: wrap;
+    transition: all .2s;
+}
+
+input[type=submit]:hover{
+    transform: scale(1.02);
+}
+
+input[type=submit]:active{
+    filter: brightness(50%);
+    color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+h1{
+    font-size: 2.25rem;
+}
+
+#footer{
+    text-align: center;
+    padding: 3rem;
+}
+
+#footer img{
+    height: 4rem;
+    transition: all .3s;
+}
+
+#footer img:hover{
+    transform: scale(1.1);
+    animation-duration: 500ms;
+}
+
+/*
+neutral: #8F8196
+red: #C1142B
+green: #226315
+*/
