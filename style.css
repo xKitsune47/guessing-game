@@ -1,5 +1,4 @@
 body{
-    background-color: #708090;
     font-family: 'Sometype Mono', monospace;
 }
 
@@ -20,7 +19,7 @@ body{
     height: 28rem;
     text-align: right;
     border-top: 1px black solid;
-    padding: 6em 4em 4em 4em;
+    padding: 6em 4em 2em 4em;
 }
 
 .answerBlock{
@@ -29,11 +28,11 @@ body{
     text-align: left;
     border-left: 0.5px black solid;
     border-top: 1px black solid;
-    padding: 6em 4em 4em 4em;
+    padding: 6em 4em 2em 4em;
 
 }
 
-.answer{
+#answer{
     font-size: 3rem;
 }
 
