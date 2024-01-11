@@ -1,3 +1,3 @@
-# guessing-game.github.io
+# guessing-game
 
 Simple number guessing game using JS' DOM manipulation
