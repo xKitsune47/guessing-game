@@ -18,14 +18,15 @@
     <main id="mainSection">
         <div class="logicBlock">
             <div class="logicBlockTextAlign">
-                <p><input type="number" class="numberInput" id="numberInput" onkeydown="onPressedEnter();"></p>
-                <p><input type="submit" onclick="answerChecking();" value="Place your guess" id="submitAnswer"></p>
+                <p><input type="number" class="numberInput" id="numberInput" onkeydown="onPressedEnter();" disabled></p>
+                <p><input type="submit" onclick="answerChecking();" value="Place your guess" id="submitAnswer" disabled></p>
             </div>
         </div>
-        <div class="answerBlock">
-            <h2 id="answerTitle">Answer was...</h2>
+        <div class="answerBlock" id="answerBlock">
+            <input type="submit" id="playButton" onclick="playButton();" value="Play">
+            <!-- <h2 id="answerTitle">Answer was...</h2>
             <span id="answer"></span><br>
-            <span id="buttonDestination"></span>
+            <span id="buttonDestination"></span> -->
         </div>
     </main>
     <footer id="footer">

@@ -32,14 +32,22 @@ function lockInputs(){
 }
 
 function createPlayAgainButton(){
-    const buttonDestination = document.getElementById('answerBlock');
     const createButton = document.createElement('input');
     const parentElement = document.getElementsByTagName('span')[1];
+    const breakLine = document.createElement('br');
     createButton.setAttribute('type', 'submit');
     createButton.setAttribute('onclick', 'generatingNumber();');
     createButton.setAttribute('value', 'Play again!');
     createButton.setAttribute('id', 'playAgainButton');
+    parentElement.append(breakLine);
     parentElement.append(createButton);
+    const playAgain = document.getElementById('playAgainButton');
+    playAgain.addEventListener('click', function ifClickedPlayAgain(event){
+        playAgain.remove();
+        document.getElementById('answer').innerHTML = '';
+        document.getElementById('numberInput').removeAttribute('disabled');
+        document.getElementById('submitAnswer').removeAttribute('disabled');
+    });
     return;
 }
 
@@ -50,13 +58,50 @@ function onPressedEnter(){
     }
 }
 
+function playButton(){
+    const playButtonListener = document.getElementById('playButton');
+    playButtonListener.addEventListener('click', function ifClickedPlay(event){
+        playButtonListener.remove();
+        const parentElement = document.getElementById('answerBlock');
+        const createAnswerTitle = document.createElement('span');
+        const createAnswerPlaceholder = document.createElement('span');
+        const createButtonDestination = document.createElement('span');
+        const breakLine1 = document.createElement('br');
+        const breakLine2 = document.createElement('br');
+        createAnswerTitle.setAttribute('id', 'answerTitle');
+        createAnswerPlaceholder.setAttribute('id', 'answer');
+        createButtonDestination.setAttribute('id', 'buttonDestination');
+        parentElement.append(createAnswerTitle);
+        parentElement.append(breakLine1);
+        parentElement.append(createAnswerPlaceholder);
+        parentElement.append(breakLine2);
+        parentElement.append(createButtonDestination);
+        document.getElementById('answerTitle').innerHTML = 'Answer was...';
+        document.getElementById('answer').innerHTML = '';
+        document.getElementById('buttonDestination').innerHTML = '';
+        document.getElementById('numberInput').removeAttribute('disabled');
+        document.getElementById('submitAnswer').removeAttribute('disabled');
+    });
+    return;
+}
+
 function generatingNumber(){
-    return Math.floor(Math.random() * 10)+1;
+    let generatedNumber = Math.floor(Math.random() * 10)+1;
+    console.log(generatedNumber);
+    return generatedNumber;
 }
 let generatedNumber = generatingNumber();
-console.log(generatedNumber);
 
 const siteWidth = 1280;
 let scale = screen.width /siteWidth;
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
 
+
+/* 
+dodac logike dla przycisku ponownej gry
+dodac usuwanie przycisku ponownej gry po kliknieciu
+dodac odblokowanie inputow po kliknieciu grania ponownie
+dodac wynik rozgrywki + hiScore
+dodac sprawdzanie czy numer juz byl zgadywany, jak tak to wyswietla powiadomienie ze juz byl
+dodac zmiane koloru tla po wygranej, po 2s wraca do normalnego
+*/
