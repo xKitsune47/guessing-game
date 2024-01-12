@@ -2,26 +2,37 @@
 
 function answerChecking(){
     let guessedNumber = parseInt(document.getElementById('numberInput').value);
-    console.log(typeof(guessedNumber));
     if (!document.getElementById('numberInput').value){
         document.getElementById('answer').innerHTML = 'Write a number';
     } else{
-        if (guessedNumber === generatedNumber){
-            document.getElementById('answer').innerHTML = 'correct!';
-            lockInputs();
-            createPlayAgainButton();
-        } else if (guessedNumber < generatedNumber) {
-            document.getElementById('answer').innerHTML = 'incorrect, try higher';
-        } else if (guessedNumber > generatedNumber) {
-            document.getElementById('answer').innerHTML = 'incorrect, try lower';
+        if (guessedNumber > 50 || guessedNumber < 1){
+            document.getElementById('answer').innerHTML = 'number not in guessing range';
         } else {
-            alert('Something unexpected happened! Please refresh the site.')
+            if (listOfGuessedNumbers.includes(guessedNumber)){
+                document.getElementById('answer').innerHTML = `You've already tried number ${guessedNumber}`;
+            } else{
+                if (guessedNumber === generatedNumber){
+                    document.getElementById('answer').innerHTML = 'correct!';
+                    document.querySelector('body').setAttribute('style', 'background-color: #417836;');
+                    listOfGuessedNumbers.length = 0;
+                    lockInputs();
+                    createPlayAgainButton();
+                } else if (guessedNumber < generatedNumber) {
+                    document.getElementById('answer').innerHTML = 'incorrect, try higher';
+                    listOfGuessedNumbers.push(guessedNumber);
+                } else if (guessedNumber > generatedNumber) {
+                    document.getElementById('answer').innerHTML = 'incorrect, try lower';
+                    listOfGuessedNumbers.push(guessedNumber);
+                } else {
+                    alert('Something unexpected happened! Please refresh the site.')
+                }
+                const numberInputField = document.getElementById('submitAnswer');
+                numberInputField.addEventListener('click', function clearField(event) {
+                    const numberGuessed = document.getElementById('numberInput');
+                    numberGuessed.value = '';
+                });
+            }
         }
-        const numberInputField = document.getElementById('submitAnswer');
-        numberInputField.addEventListener('click', function clearField(event) {
-            const numberGuessed = document.getElementById('numberInput');
-            numberGuessed.value = '';
-        });
     }
     return;
 }
@@ -47,6 +58,8 @@ function createPlayAgainButton(){
         document.getElementById('answer').innerHTML = '';
         document.getElementById('numberInput').removeAttribute('disabled');
         document.getElementById('submitAnswer').removeAttribute('disabled');
+        document.querySelector('body').setAttribute('style', 'background-color: #708090;');
+        globalThis.generatedNumber = generatingNumber();
     });
     return;
 }
@@ -81,16 +94,18 @@ function playButton(){
         document.getElementById('buttonDestination').innerHTML = '';
         document.getElementById('numberInput').removeAttribute('disabled');
         document.getElementById('submitAnswer').removeAttribute('disabled');
+        globalThis.generatedNumber = generatingNumber();
     });
     return;
 }
 
 function generatingNumber(){
-    let generatedNumber = Math.floor(Math.random() * 10)+1;
-    console.log(generatedNumber);
+    let generatedNumber = Math.floor(Math.random() * 2)+1;
+    globalThis.generatedNumber;
     return generatedNumber;
 }
-let generatedNumber = generatingNumber();
+
+let listOfGuessedNumbers = [];
 
 const siteWidth = 1280;
 let scale = screen.width /siteWidth;
@@ -98,10 +113,5 @@ document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='
 
 
 /* 
-dodac logike dla przycisku ponownej gry
-dodac usuwanie przycisku ponownej gry po kliknieciu
-dodac odblokowanie inputow po kliknieciu grania ponownie
 dodac wynik rozgrywki + hiScore
-dodac sprawdzanie czy numer juz byl zgadywany, jak tak to wyswietla powiadomienie ze juz byl
-dodac zmiane koloru tla po wygranej, po 2s wraca do normalnego
 */
