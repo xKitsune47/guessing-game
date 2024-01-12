@@ -119,7 +119,7 @@ function playButton(){
 }
 
 function generatingNumber(){
-    let generatedNumber = Math.floor(Math.random() * 2)+1;
+    let generatedNumber = Math.floor(Math.random() * 50)+1;
     globalThis.generatedNumber;
     return generatedNumber;
 }
