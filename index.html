@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guessing game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
-</head>
-<body style="background-color: #708090">
-    <header class="pageTitle">
-        <h1>Guess the number</h1>
-        <p>You have to guess a number between 1 and 50. The lower score the better!</p>
-    </header>
-    <main id="mainSection">
-        <div class="logicBlock">
-            <div class="logicBlockTextAlign">
-                <p><input type="number" class="numberInput" id="numberInput" onkeydown="onPressedEnter();" disabled></p>
-                <p><input type="submit" onclick="answerChecking();" value="Place your guess" id="submitAnswer" disabled></p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guessing game</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap"
+            rel="stylesheet"
+        />
+        <script src="script.js"></script>
+    </head>
+    <body style="background-color: #708090">
+        <header class="pageTitle">
+            <h1>Guess the number</h1>
+            <p>
+                You have to guess a number between 1 and 50. The lower score the
+                better!
+            </p>
+        </header>
+        <main id="mainSection">
+            <div class="logicBlock">
+                <div class="logicBlockTextAlign">
+                    <p>
+                        <input
+                            type="number"
+                            class="numberInput"
+                            id="numberInput"
+                            onkeydown="onPressedEnter();"
+                            disabled
+                        />
+                    </p>
+                    <p>
+                        <input
+                            type="submit"
+                            onclick="answerChecking();"
+                            value="Place your guess"
+                            id="submitAnswer"
+                            disabled
+                        />
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="answerBlock" id="answerBlock">
-            <input type="submit" id="playButton" onclick="playButton();" value="Play">
-        </div>
-    </main>
-    <footer id="footer" style="background-color: #708090;">
-        <div id="linksDiv">
-            <a href="https://github.com/xKitsune47"><img src="github-logo.png" alt="github"></a>
-        </div>
-        <div id="scoreField">
-            Your best score was: <span id="scoreItself">null</span>
-        </div>
-    </footer>
-</body>
+            <div class="answerBlock" id="answerBlock">
+                <input
+                    type="submit"
+                    id="playButton"
+                    onclick="playButton();"
+                    value="Play"
+                />
+            </div>
+        </main>
+        <footer id="footer" style="background-color: #708090">
+            <div id="linksDiv">
+                <a href="https://github.com/xKitsune47"
+                    ><img src="github-logo.png" alt="github"
+                /></a>
+            </div>
+            <div id="scoreField">
+                Your best score was: <span id="scoreItself">null</span>
+            </div>
+        </footer>
+    </body>
 </html>

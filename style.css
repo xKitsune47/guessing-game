@@ -1,20 +1,20 @@
-body{
-    font-family: 'Sometype Mono', monospace;
+body {
+    font-family: "Sometype Mono", monospace;
 }
 
-#mainSection{
+#mainSection {
     width: 100%;
     display: block;
     display: flex;
     flex-direction: row;
 }
 
-.pageTitle{
+.pageTitle {
     text-align: center;
     padding: 2rem;
 }
 
-.logicBlock{
+.logicBlock {
     width: 50%;
     height: 28rem;
     text-align: right;
@@ -22,7 +22,7 @@ body{
     padding: 6em 4em 2em 4em;
 }
 
-.answerBlock{
+.answerBlock {
     width: 50%;
     height: 28rem;
     text-align: left;
@@ -31,59 +31,59 @@ body{
     padding: 6em 4em 2em 4em;
 }
 
-#answer{
+#answer {
     font-size: 3rem;
 }
 
-input{
-    font-family: 'Sometype Mono', monospace;
+input {
+    font-family: "Sometype Mono", monospace;
     width: 12rem;
     text-align: center;
 }
 
-input:disabled:hover{
+input:disabled:hover {
     cursor: not-allowed;
 }
 
-input[type=number]{
+input[type="number"] {
     height: 12rem;
     background-color: #708090;
-    border: 0.125rem #4A5859 solid;
+    border: 0.125rem #4a5859 solid;
     filter: brightness(90%);
     font-size: 5rem;
 }
 
-input[type=submit]{
+input[type="submit"] {
     background-color: #708090;
-    border: 0.125rem #4A5859 solid;
+    border: 0.125rem #4a5859 solid;
     filter: brightness(90%);
     margin-right: 0.25rem;
     height: 3rem;
     font-size: 1rem;
     text-wrap: wrap;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
-input[type=submit]:hover{
+input[type="submit"]:hover {
     transform: scale(1.02);
 }
 
-input[type=submit]:active{
+input[type="submit"]:active {
     filter: brightness(50%);
     color: white;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-h1{
+h1 {
     font-size: 2.25rem;
 }
 
-#footer{
+#footer {
     position: -webkit-sticky;
     position: sticky;
     bottom: 0;
@@ -96,21 +96,21 @@ h1{
     /* background-color: #708090; */
 }
 
-#footer img{
+#footer img {
     height: 4rem;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
-#footer img:hover{
+#footer img:hover {
     transform: scale(1.1);
     animation-duration: 500ms;
 }
 
-#linksDiv{
+#linksDiv {
     width: 50%;
 }
 
-#scoreField{
+#scoreField {
     width: 50%;
     font-size: 2rem;
 }
